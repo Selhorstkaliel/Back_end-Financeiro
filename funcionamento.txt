@@ -1,0 +1,22 @@
+EXPLICAÇÃO — DELETE, GET, PUT, POST (Lógica do Sistema Financeiro)
+ 
+ 
+ 1. POST — Criar um novo recurso- Recebe um JSON do cliente.- Valida com @Valid.- Converte DTO -> Entidade.- Salva no banco via JPA.- Retorna DTO de resposta.
+ 
+ // -----------------------------||-------------------------------- \\ 
+ 
+ 2. GET — Buscar dados
+ GET /pessoas → lista geral.
+ GET /pessoas/{id} → um registro.- Controller recebe o ID.- Service busca no repository.- Retorna DTO ou erro se não existir.
+ 
+ // -----------------------------||-------------------------------- \\ 
+ 
+ 3. PUT — Atualizar registro- Recebe ID + JSON com novos dados.- Busca entidade existente.- Atualiza os campos.- Salva novamente.- Devolve DTO atualizado.
+ 
+ // -----------------------------||-------------------------------- \\ 
+ 
+ 4. DELETE — Remover registro- Recebe ID pela URL.- Service consulta o banco.- Remove.- Retorna HTTP 204 (sem conteúdo).
+ 
+ // -----------------------------||-------------------------------- \\ 
+ 
+ 5. Filtro de Lançamentos — GET /lancamentos/filtro- Parâmetros opcionais: dataInicial, dataFinal, tipo, categoria, pessoa.- Controller monta FiltroLancamentoDTO.- Service monta query dinâmica.- Retorna somente lançamentos compatíveis.
