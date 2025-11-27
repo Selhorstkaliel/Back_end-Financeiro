@@ -18,7 +18,7 @@ Este projeto implementa um sistema financeiro simples com:
    ```
 
 3. A aplicação subirá em `http://localhost:8080`.
-4. O MySQL estará acessível em `localhost:3307` (usuário/senha: `financeiro` / `financeiro`).
+4. O MySQL estará acessível em `localhost:3307` 
 
 ## Endpoints principais
 
